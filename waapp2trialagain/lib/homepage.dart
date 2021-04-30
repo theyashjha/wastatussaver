@@ -17,10 +17,17 @@ class MyHome extends StatelessWidget {
   MyHome({
     Key key,
   }) : super(key: key);
+  
+  
 
-  List<FileSystemEntity> files = Directory(FileUtils.waPath).listSync()
+  List<FileSystemEntity> files = Directory(FileUtils.waPath).listSync()//Here I am getting the exception
     ..removeWhere((f) => basename(f.path).split("")[0] == ".");
+  //Exception has occurred.
+//FileSystemException (FileSystemException: Directory listing failed,
+  //path = '/storage/emulated/0/WhatsApp/Media/.Statuses/' (OS Error: No such file or directory, errno = 2))
 
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
