@@ -42,6 +42,10 @@ class _SplashState extends State<Splash> {
       Dialogs.showToast('Please Grant Storage Permissions');
     }
   }
+  
+  //Here is where I NEED HELP! 
+  //If the path or directory doesn't exist just return a Scaffold that says
+  //"NO STATUSES FOUND!"
 
   checkWAFolder() {
     if (Directory(FileUtils.waPath).existsSync()) {
